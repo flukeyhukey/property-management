@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+  Lane Property design system. Two colours (navy, harbour), navy-opacity
+  neutrals, DM Sans for display and Manrope for body. Flat surfaces, hairline
+  borders, no shadows except `float`. Status colours: harbour is "happy",
+  amber is "needs some care", red is only ever an owner's health, never a
+  PM's number.
+*/
+:root {
+  --navy: #052c55;
+  --harbour: #078cc5;
+  --ground: #f8f9fa;
+  --card: #ffffff;
+  --ink: #052c55;
+  --ink-78: #3a5979;
+  --ink-66: #58728d;
+  --ink-40: #9babbb;
+  --hairline: #e1e6eb;
+  --harbour-tint: #e6f4f9;
+  --on-navy: #ffffff;
+  --on-navy-76: #c3ccd6;
+  --hairline-on-navy: #37516f;
+  --error: #b3261e;
+  --amber: #9a5b00;
+  --amber-tint: #fdf3e3;
+  --float: 0 12px 32px rgba(5, 44, 85, 0.14);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-harbour: var(--harbour);
+  --color-ground: var(--ground);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-78: var(--ink-78);
+  --color-ink-66: var(--ink-66);
+  --color-ink-40: var(--ink-40);
+  --color-hairline: var(--hairline);
+  --color-harbour-tint: var(--harbour-tint);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-76: var(--on-navy-76);
+  --color-hairline-on-navy: var(--hairline-on-navy);
+  --color-error: var(--error);
+  --color-amber: var(--amber);
+  --color-amber-tint: var(--amber-tint);
+  --font-display: var(--font-dm-sans), sans-serif;
+  --font-sans: var(--font-manrope), sans-serif;
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --shadow-float: var(--float);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(7, 140, 197, 0.25);
+  color: var(--ink);
+}
+
+a {
+  text-decoration-color: var(--harbour);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--harbour);
+  outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--harbour);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+/* Thin scrollbars on scrolling panels */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(5, 44, 85, 0.3) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

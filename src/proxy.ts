@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } from "@/lib/supabase/config";
 
 const PUBLIC_PATHS = ["/login", "/auth", "/api/cron", "/api/webhooks", "/manifest.webmanifest", "/sw.js"];
 
@@ -12,8 +13,8 @@ export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY,
     {
       cookies: {
         getAll() {

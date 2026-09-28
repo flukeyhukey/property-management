@@ -1,16 +1,53 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": [
+    "bom1"
+  ],
   "crons": [
-    { "path": "/api/cron/ingest", "schedule": "*/5 * * * *" },
-    { "path": "/api/cron/enrich", "schedule": "*/5 * * * *" },
-    { "path": "/api/cron/commitments", "schedule": "*/15 * * * *" },
-    { "path": "/api/cron/notify?job=flush", "schedule": "*/5 * * * *" },
-    { "path": "/api/cron/notify?job=daily", "schedule": "0 7 * * 1-5" },
-    { "path": "/api/cron/notify?job=detractors", "schedule": "30 21 * * *" },
-    { "path": "/api/cron/notify?job=weekly", "schedule": "0 22 * * 0" },
-    { "path": "/api/cron/resly", "schedule": "0 19 * * *" },
-    { "path": "/api/cron/health", "schedule": "30 19 * * *" },
-    { "path": "/api/cron/cadence", "schedule": "0 20 * * *" },
-    { "path": "/api/cron/nps", "schedule": "0 21 * * *" }
+    {
+      "path": "/api/cron/ingest",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/enrich",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/commitments",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/notify?job=flush",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/notify?job=daily",
+      "schedule": "0 7 * * 1-5"
+    },
+    {
+      "path": "/api/cron/notify?job=detractors",
+      "schedule": "30 21 * * *"
+    },
+    {
+      "path": "/api/cron/notify?job=weekly",
+      "schedule": "0 22 * * 0"
+    },
+    {
+      "path": "/api/cron/resly",
+      "schedule": "0 19 * * *"
+    },
+    {
+      "path": "/api/cron/health",
+      "schedule": "30 19 * * *"
+    },
+    {
+      "path": "/api/cron/cadence",
+      "schedule": "0 20 * * *"
+    },
+    {
+      "path": "/api/cron/nps",
+      "schedule": "0 21 * * *"
+    }
   ]
 }
